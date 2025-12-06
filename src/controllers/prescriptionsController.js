@@ -1,5 +1,5 @@
 
-const pool = require('../config/db')
+const pool = require('../dataBase/db')
 
 const getLembretes = async (req, res) => {
     try {

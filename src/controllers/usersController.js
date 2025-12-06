@@ -32,7 +32,7 @@ const createUser = async (req, res) => {
     try {
         // olha se email já existe
         const exists = await pool.query(
-            'SELECT * FROM users WHERE email = $1',
+            'SELECT * FROM tb_users WHERE email = $1',
             [email]
         );
 
@@ -42,7 +42,7 @@ const createUser = async (req, res) => {
 
         // cria o usuário
         const result = await pool.query(
-            'INSERT INTO users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING *',
+            'INSERT INTO tb_users (name, email, password_hash) VALUES ($1, $2, $3) RETURNING *',
             [name, email, password]
         );
 

@@ -8,6 +8,7 @@ app.use(cors());
 
 const prescriptionsRouter = require('./src/routes/prescriptionsRouter');
 const usersRouter = require('./src/routes/usersRouter');
+const recurrenceRouter = require('./src/routes/recurrenceRouter');
 
 app.get('/', (req, res) => {
     res.send('bem vindo ao sistema de lembretes');
@@ -15,6 +16,7 @@ app.get('/', (req, res) => {
 
 app.use('/prescriptions', prescriptionsRouter);
 app.use('/users', usersRouter);
+app.use('/recurrence', recurrenceRouter);
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, "0.0.0.0", () => {
